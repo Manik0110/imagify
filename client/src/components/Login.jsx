@@ -38,6 +38,7 @@ const Login = () => {
                 }
             } else {
                 const { data } = await axios.post(backendUrl + '/api/user/register', { name, email, password })
+                console.log("FINAL URL:", (backendUrl + '/api/user/login'))
 
                 if (data.success) {
                     setToken(data.token)
@@ -48,6 +49,7 @@ const Login = () => {
                     toast.error(data.message)
                 }
             }
+
 
         } catch (error) {
             toast.error(error.message)
