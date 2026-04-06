@@ -26,7 +26,7 @@ const Login = () => {
         try {
 
             if (state === 'Login') {
-                const { data } = await axios.post(backendUrl + '/api/user/login', { email, password })
+                const { data } = await axios.post((backendUrl + '/api/user/login'), { email, password })
 
                 if (data.success) {
                     setToken(data.token)
