@@ -11,7 +11,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-    origin: "https://imagify-backend.onrender.com",
+    origin: "https://mahesh-imagify-backend.onrender.com",
     credentials: true
 }))
 
