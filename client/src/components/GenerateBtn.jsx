@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { useNavigate } from "react-router-dom";
 import { assets } from '../assets/assets'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
@@ -7,7 +8,12 @@ import { AppContext } from '../context/context'
 const GenerateBtn = () => {
 
     const { user, setShowLogin } = useContext(AppContext)
-    const navigate = useNavigate
+    const navigate = useNavigate();
+    const image = await generateImage(prompt)
+
+    if (!image) {
+        navigate('/buy')
+    }
 
     const onClickHandler = () => {
         if (user) {
