@@ -9,7 +9,7 @@ const AppContextProvider = (props) => {
     const [user, setUser] = useState(null);
     const [showLogin, setShowLogin] = useState(false);
 
-
+    const navigate = useNavigate()
 
     const [token, setToken] = useState(localStorage.getItem('token'))
 
@@ -52,8 +52,7 @@ const AppContextProvider = (props) => {
                 loadCreditsData()
 
                 if (data.creditBalance === 0) {
-                    toast.error("No credits left")
-                    //navigate('/buy')
+                    navigate('/buy')
                 }
             }
         } catch (error) {
