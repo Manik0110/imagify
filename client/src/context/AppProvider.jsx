@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import userNavigate from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { toast } from "react-toastify";
 import axios from 'axios'
 import { AppContext } from './context'
@@ -8,7 +8,7 @@ const AppContextProvider = (props) => {
 
     const [user, setUser] = useState(null);
     const [showLogin, setShowLogin] = useState(false);
-    const navigate = userNavigate()
+    const navigate = useNavigate()
 
     const [token, setToken] = useState(localStorage.getItem('token'))
 
