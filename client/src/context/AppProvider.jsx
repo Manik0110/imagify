@@ -16,7 +16,7 @@ const AppContextProvider = (props) => {
 
     const backendUrl = "https://imagify-backend.onrender.com"
 
-    const navigate = useNavigate
+    const navigate = useNavigate()
 
     const loadCreditsData = async () => {
         try {
