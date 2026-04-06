@@ -17,7 +17,6 @@ const AppContextProvider = (props) => {
 
     const backendUrl = "https://imagify-backend.onrender.com"
 
-    const navigate = useNavigate()
 
     const loadCreditsData = async () => {
         try {
@@ -53,7 +52,8 @@ const AppContextProvider = (props) => {
                 loadCreditsData()
 
                 if (data.creditBalance === 0) {
-                    navigate('/buy')
+                    toast.error("No credits left")
+                    //navigate('/buy')
                 }
             }
         } catch (error) {
