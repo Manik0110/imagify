@@ -9,11 +9,7 @@ const GenerateBtn = () => {
 
     const { user, setShowLogin } = useContext(AppContext)
     const navigate = useNavigate();
-    const image = await generateImage(prompt)
 
-    if (!image) {
-        navigate('/buy')
-    }
 
     const onClickHandler = () => {
         if (user) {
@@ -22,7 +18,6 @@ const GenerateBtn = () => {
             setShowLogin(true)
         }
     }
-
 
     return (
         <motion.div
