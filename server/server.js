@@ -10,10 +10,7 @@ const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(express.json())
-app.use(cors({
-    origin: "https://mahesh-imagify-backend.onrender.com",
-    credentials: true
-}))
+app.use(cors())
 
 await connectDB()
 
